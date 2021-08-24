@@ -12,7 +12,7 @@ RSpec.describe Product, type: :model do
 
       expect(@product).to be_valid
     end
-      it "should contain all attributes without category" do
+      it "should not be valid without category" do
         @category = nil
         @product = Product.new
         @product.name = "sample item"
@@ -24,7 +24,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to eql(["Category can't be blank"])
       end
 
-      it "should contain all attributes except name" do
+      it "should not be valid without name" do
         @category = Category.new(name: "apparel")
         @product = @category.products.new
         @product.name = nil
@@ -36,7 +36,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to eql(["Name can't be blank"])
       end
 
-      it "should contain all attributes except price" do
+      it "should not be valid without price" do
         @category = Category.new(name: "apparel")
         @product = @category.products.new
         @product.name = "sample item"
@@ -48,7 +48,7 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to eql(["Price cents is not a number", "Price is not a number", "Price can't be blank"])
       end
 
-      it "should contain all attributes except quantity" do
+      it "should not be valid without quantity" do
         @category = Category.new(name: "apparel")
         @product = @category.products.new
         @product.name = "sample item"
