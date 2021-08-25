@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product detail page from home page by clicking on a product", type: :feature, js: true do
+RSpec.feature "Visitor navigates to login page and logs in with correct credentials.", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -16,13 +16,26 @@ RSpec.feature "Visitor navigates to product detail page from home page by clicki
     )
 
     end
+    
+    @user = User.create!(
+      first_name: "First",
+      last_name: "Last",
+      email: "email@email.com",
+      password: "securepassword",
+      password_confirmation: "securepassword"
+    )
   end
 
-  scenario "Add the first product to cart" do
+  scenario "Log in with email and password" do
     visit root_path
-    first("article.product").hover.click_on "Add"
-    
-    expect(page).to have_content 'My Cart (1)'
+    click_on "Login"
+    fill_in "Email:", with: "email@email.com"
+    fill_in "Password:", with: "securepassword"
+    save_screenshot
+    click_on "Sign in"
+
+    expect(page).to have_content 'Signed in as email@email.com'
+    expect(page).to have_css 'article.product', count: 10
 
     # uncomment to see screenshot
     # save_screenshot
