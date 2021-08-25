@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
+RSpec.feature "Visitor navigates to product detail page from home page by clicking on a product", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -22,8 +22,16 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     visit root_path
 
     # commented out b/c it's for debugging only
-    save_and_open_screenshot
+    # save_and_open_screenshot
 
     expect(page).to have_css 'article.product', count: 10
+  end
+
+  scenario "Click on the first product" do
+    visit root_path
+    first("article.product").hover.click_on "Details"
+    
+    expect(page).to have_css '.product-detail', count: 1
+    save_screenshot
   end
 end
