@@ -18,20 +18,13 @@ RSpec.feature "Visitor navigates to product detail page from home page by clicki
     end
   end
 
-  scenario "They see all products" do
-    visit root_path
-
-    # commented out b/c it's for debugging only
-    # save_and_open_screenshot
-
-    expect(page).to have_css 'article.product', count: 10
-  end
-
   scenario "Click on the first product" do
     visit root_path
     first("article.product").hover.click_on "Details"
     
     expect(page).to have_css '.product-detail', count: 1
-    save_screenshot
+
+    # uncomment to see screenshot
+    # save_screenshot
   end
 end
