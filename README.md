@@ -4,17 +4,17 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ## Screen Shots
 
-!["Jungle home page"]()
+!["Jungle home page"](https://github.com/lawwwlin/jungle-rails/blob/master/docs/jungle-home.png)
 
-!["Jungle about us page"]()
+!["Jungle about us page"](https://github.com/lawwwlin/jungle-rails/blob/master/docs/jungle-aboutus.png)
 
-!["Jungle login page"]()
+!["Jungle login page"](https://github.com/lawwwlin/jungle-rails/blob/master/docs/jungle-login.png)
 
-!["Jungle sign up page"]()
+!["Jungle sign up page"](https://github.com/lawwwlin/jungle-rails/blob/master/docs/jungle-signup.png)
 
-!["Jungle cart empty"]()
+!["Jungle cart empty"](https://github.com/lawwwlin/jungle-rails/blob/master/docs/jungle-emptycart.png)
 
-!["Jungle admin categories page"]()
+!["Jungle admin categories page"](https://github.com/lawwwlin/jungle-rails/blob/master/docs/jungle-admin-categories.png)
 
 ## Additional Steps for Apple M1 Machines
 
